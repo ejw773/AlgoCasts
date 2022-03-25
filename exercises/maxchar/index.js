@@ -9,18 +9,20 @@ function maxChar(str) {
   let charMap = {};
   let maxNum = 0;
   let maxChar = '';
-
-  for (char of str) {
+  for (let char of str) {
+    console.log(char);
     if (!charMap[char]) {
       charMap[char] = 1;
     } else {
       charMap[char]++;
     }
   }
-  for (char in charMap) {
+  console.table(charMap);
+  for (let char in charMap) {
     if (charMap[char] > maxNum) {
-      maxNum = charMap[char];
       maxChar = char;
+      maxNum = charMap[char];
+    } else {
     }
   }
   return maxChar;
